@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ultimate : MonoBehaviour
 {
@@ -10,34 +11,44 @@ public class Ultimate : MonoBehaviour
     public GameObject ultiSpawnPosition;
     public float cooldown;
     public float timePassed;
+    public float currentCooldown;
+
+    public Image covertorImagen;
+    public Text cooldownTimer;
     void Start()
     {
         m = FindObjectOfType<Manager>();
+        currentCooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timePassed += Time.deltaTime;
-        if (timePassed > cooldown)
+        currentCooldown -= Time.deltaTime;
+        if (currentCooldown<=0)
         {
             //boton verde
+            covertorImagen.enabled = false;
+            cooldownTimer.enabled = false;
         }
         else
         {
             //boton rojo
+            cooldownTimer.text =Mathf.RoundToInt( currentCooldown).ToString();
         }
     }
     public void ActivateUlti()
     {
-        if(timePassed>cooldown)
+        if(currentCooldown <= 0)
         {
             foreach(Enemy e in m.enemies)
             {
                 e.SlowDown();
             }
             Instantiate(specialEffect, ultiSpawnPosition.transform.position, ultiSpawnPosition.transform.rotation);
-            timePassed = 0;
+            currentCooldown = cooldown;
+            covertorImagen.enabled = true;
+            cooldownTimer.enabled = true;
         }
     }
 }
