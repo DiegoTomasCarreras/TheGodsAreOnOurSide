@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public float timeSlowedDown;
 
     public GameObject bloodParticles;
+    public GameObject freezeParticles;
 
     Animator anim;
 
@@ -109,6 +110,15 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         Instantiate(bloodParticles, transform.position, transform.rotation);
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    public void TakeDamageFromPlayer(float damage)
+    {
+        health -= damage;
+        Instantiate(freezeParticles, transform.position, transform.rotation);
         if (health <= 0)
         {
             Die();
