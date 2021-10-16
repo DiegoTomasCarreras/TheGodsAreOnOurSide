@@ -22,6 +22,9 @@ public class Enemy : MonoBehaviour
     public GameObject bloodParticles;
     public GameObject freezeParticles;
 
+   // public AudioClip deathSound;
+    public AudioSource source;
+
     Animator anim;
 
     Manager m;
@@ -34,6 +37,8 @@ public class Enemy : MonoBehaviour
         m = FindObjectOfType<Manager>();
         m.enemies.Add(this);
         baseSpeed = speed;
+
+        source = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,6 +91,7 @@ public class Enemy : MonoBehaviour
     {
         anim.SetBool("isDead",true);
         m.enemies.Remove(this);
+     //   source.PlayOneShot(deathSound);
         Object.Destroy(this.gameObject, 4f);
     }
     public void ReachedGoal()

@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &3737733783111937982
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244840204143094868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.1994207
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5997104, z: 0}
 --- !u!114 &1812244003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,20 +30,11 @@ MonoBehaviour:
   damage: 0
   attackRate: 0
   speed: 0.08
---- !u!136 &3737733783111937982
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244840204143094868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.1994207
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5997104, z: 0}
+  timeSlowedDown: 0
+  bloodParticles: {fileID: 1617543476243156057, guid: 433c7ef3793410f4598901c9456f9039,
+    type: 3}
+  freezeParticles: {fileID: 6431044068370311862, guid: 6b6cb76dc3c99d34b8a9f3e114f2ebce,
+    type: 3}
 --- !u!1001 &8089649964791215453
 PrefabInstance:
   m_ObjectHideFlags: 0
