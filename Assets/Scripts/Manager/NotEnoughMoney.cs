@@ -17,7 +17,7 @@ public class NotEnoughMoney : MonoBehaviour
     void Update()
     {
         currentTimer -= Time.deltaTime;
-        if(active=true)
+        if(active==true)
         {
 
         }

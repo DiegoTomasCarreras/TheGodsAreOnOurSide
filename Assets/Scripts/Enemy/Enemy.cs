@@ -22,12 +22,17 @@ public class Enemy : MonoBehaviour
     public GameObject bloodParticles;
     public GameObject freezeParticles;
 
-   // public AudioClip deathSound;
+    public AudioClip deathSound;
+    public AudioClip freezeShot;
     public AudioSource source;
 
     Animator anim;
 
     Manager m;
+
+    public bool isDead = false;
+
+    public float price;
 
     void Start()
     {
@@ -89,10 +94,16 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
+        if(isDead==true)
+        {
+            return;
+        }
+        isDead = true;
         anim.SetBool("isDead",true);
         m.enemies.Remove(this);
-     //   source.PlayOneShot(deathSound);
+        source.PlayOneShot(deathSound);
         Object.Destroy(this.gameObject, 4f);
+        m.money += price;
     }
     public void ReachedGoal()
     {
@@ -125,6 +136,7 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         Instantiate(freezeParticles, transform.position, transform.rotation);
+        source.PlayOneShot(freezeShot);
         if (health <= 0)
         {
             Die();

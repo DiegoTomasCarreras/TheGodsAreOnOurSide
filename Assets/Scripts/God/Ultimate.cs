@@ -15,10 +15,14 @@ public class Ultimate : MonoBehaviour
 
     public Image covertorImagen;
     public Text cooldownTimer;
+
+    public AudioClip ultiFreeze;
+    public AudioSource source;
     void Start()
     {
         m = FindObjectOfType<Manager>();
         currentCooldown = 0;
+        source = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,6 +45,7 @@ public class Ultimate : MonoBehaviour
     {
         if(currentCooldown <= 0)
         {
+            source.PlayOneShot(ultiFreeze);
             foreach(Enemy e in m.enemies)
             {
                 e.SlowDown();

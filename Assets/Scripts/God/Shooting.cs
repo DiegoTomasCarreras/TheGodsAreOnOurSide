@@ -20,6 +20,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //m.debugText.text = currentCooldown.ToString();
         currentCooldown -= Time.deltaTime;
         if (currentCooldown<=0)
         {
@@ -36,12 +37,12 @@ public class Shooting : MonoBehaviour
                     {
                         //m.debugText.text = "pase el if con tag enemy";
                         Enemy enemy = hitObject.collider.GetComponent<Enemy>();
-                        if (enemy != null)
+                        if (enemy != null && enemy.health>0)
                         {
+                            currentCooldown = cooldown; //si pongo esto abajo de la linea de enemy take damage no funciona, no se porque
                             //m.debugText.text = "enemy no es null";
                             enemy.TakeDamageFromPlayer(damage);
                             //m.debugText.text = "enemigo dañado";
-                            currentCooldown = cooldown;
                         }
                     }
                 }
