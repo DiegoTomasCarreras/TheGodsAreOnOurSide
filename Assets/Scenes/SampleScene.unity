@@ -305,6 +305,9 @@ MonoBehaviour:
   spawner: {fileID: 0}
   time: 0
   spawnTimer: 5
+  timeDiscountFirstOrc: 0
+  spawnTimerDiscounter: 0
+  minSpawnTime: 0
 --- !u!1 &79163841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,6 +4738,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 403949300009315247, guid: 958c14aaf287a9b4693688c678042cb6,
         type: 3}
+    - target: {fileID: 7685593703974132692, guid: 134b84dd82a57a547a1e4135874fecd1,
+        type: 3}
+      propertyPath: minSpawnTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685593703974132692, guid: 134b84dd82a57a547a1e4135874fecd1,
+        type: 3}
+      propertyPath: spawnTimerDiscounter
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685593703974132692, guid: 134b84dd82a57a547a1e4135874fecd1,
+        type: 3}
+      propertyPath: timeDiscountFirstOrc
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8882845702557054178, guid: 134b84dd82a57a547a1e4135874fecd1,
         type: 3}
       propertyPath: m_Name
