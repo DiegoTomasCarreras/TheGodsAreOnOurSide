@@ -22,7 +22,7 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        panelMain.SetActive(true);
     }
 
     // Update is called once per frame
