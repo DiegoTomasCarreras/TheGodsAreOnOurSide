@@ -15,6 +15,7 @@ public class MenuWithAnimations : MonoBehaviour
     {
         currentSelectedLevel = 1;
         enemy1.SetActive(true);
+        //poner el boton 1 como seleccionado
     }
 
     // Update is called once per frame
@@ -22,23 +23,27 @@ public class MenuWithAnimations : MonoBehaviour
     {
         
     }
-    public void LoadLevel1()
+    public void LoadLevel()
     {
-        //aca hacer que el orco se anime
-        //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-        SceneManager.LoadScene(1);
-    }
-    public void LoadLevel2()
-    {
-        //aca hacer que el orco se anime
-        //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-        SceneManager.LoadScene(2);
-    }
-    public void LoadLevel3()
-    {
-        //aca hacer que el orco se anime
-        //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-        SceneManager.LoadScene(3);
+        switch (currentSelectedLevel)
+        {
+            case 1:
+                //aca hacer que el orco se anime
+                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
+                SceneManager.LoadScene(1);
+                break;
+            case 2:
+                //aca hacer que el orco se anime
+                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
+                SceneManager.LoadScene(2);
+                break;
+            case 3:
+                //aca hacer que el orco se anime
+                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
+                SceneManager.LoadScene(3);
+                break;
+        }
+
     }
     public void SelectLevel(int lvl)
     {
@@ -46,20 +51,25 @@ public class MenuWithAnimations : MonoBehaviour
         {
             return;
         }
-        //hacer que el boton de lvl 1 se ponga de color seleccionado
         currentSelectedLevel = lvl;
-        if(lvl ==1)
+        switch (lvl)
         {
-            //Instantiate(enemy1, enemySpawner.transform.position, enemySpawner.transform.rotation);
-            enemy1.SetActive(true);
-        }
-        if(lvl==2)
-        {
-            enemy2.SetActive(true);
-        }
-        if(lvl==3)
-        {
-            enemy3.SetActive(true);
+            case 1:
+                //Instantiate(enemy1, enemySpawner.transform.position, enemySpawner.transform.rotation);
+                enemy1.SetActive(true);
+                enemy2.SetActive(false);
+                enemy3.SetActive(false);
+                break;
+            case 2:
+                enemy2.SetActive(true);
+                enemy1.SetActive(false);
+                enemy3.SetActive(false);
+                break;
+            case 3:
+                enemy3.SetActive(true);
+                enemy1.SetActive(false);
+                enemy2.SetActive(false);
+                break;
         }
     }
 }
