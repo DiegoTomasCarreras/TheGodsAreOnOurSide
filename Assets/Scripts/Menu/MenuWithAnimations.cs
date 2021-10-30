@@ -8,9 +8,11 @@ public class MenuWithAnimations : MonoBehaviour
     public int currentSelectedLevel;
     public GameObject enemySpawner;
     public GameObject enemy1;
+    public Animator enemy1Anim;
     public GameObject enemy2;
+    public Animator enemy2Anim;
     public GameObject enemy3;
-    // Start is called before the first frame update
+    public Animator enemy3Anim;
     void Start()
     {
         currentSelectedLevel = 1;
@@ -28,19 +30,16 @@ public class MenuWithAnimations : MonoBehaviour
         switch (currentSelectedLevel)
         {
             case 1:
-                //aca hacer que el orco se anime
-                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-                SceneManager.LoadScene(1);
+                enemy1Anim.SetBool("isSelected",true);
+                StartCoroutine(WaitBeforeLoadingScene(2f,1));
                 break;
             case 2:
-                //aca hacer que el orco se anime
-                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-                SceneManager.LoadScene(2);
+                enemy2Anim.SetBool("isSelected", true);
+                StartCoroutine(WaitBeforeLoadingScene(2f, 1));
                 break;
             case 3:
-                //aca hacer que el orco se anime
-                //aca poner la couroutine para que banque hasta que termine la animacion (que espere 1 seg)
-                SceneManager.LoadScene(3);
+                enemy3Anim.SetBool("isSelected", true);
+                StartCoroutine(WaitBeforeLoadingScene(2f, 1));
                 break;
         }
 
@@ -71,5 +70,11 @@ public class MenuWithAnimations : MonoBehaviour
                 enemy2.SetActive(false);
                 break;
         }
+    }
+    IEnumerator WaitBeforeLoadingScene(float secs, int scene)
+    {
+        yield return new WaitForSeconds(secs);
+        //InsertLOADINGSCREEN
+        SceneManager.LoadScene(scene);
     }
 }

@@ -17,6 +17,8 @@ public class CameraMove : MonoBehaviour
     public GameObject panelCredits;
     public GameObject panelTutorial;
 
+    public GameObject creditsDancer;
+
 
 
     // Start is called before the first frame update
@@ -31,29 +33,6 @@ public class CameraMove : MonoBehaviour
         if(dstPosition!=Vector3.zero)
         {
             transform.position = Vector3.Lerp(transform.position, dstPosition, Time.deltaTime * 2.5f);
-
-            //if (camera.transform.position.z == posLevels.transform.position.z)
-            //{
-            //    Debug.Log("Entre");
-            //    //activa botones de levels
-            //    panelCredits.active = false;
-            //    panelMain.active = false;
-            //    panelTutorial.active = false;
-
-            //    panelLevels.active = true;
-            //}
-            //if (camera.transform.position.z == posPlay.transform.position.z)
-            //{
-            //    //activa botones de play
-            //}
-            //if (camera.transform.position.z == posTutorial.transform.position.z)
-            //{
-            //    //activa botones de tutorial
-            //}
-            //if (camera.transform.position.z == posCredits.transform.position.z)
-            //{
-            //    //activa botones de credits
-            //}
         }
     }
     public void MoveTowardsLevels()
@@ -87,6 +66,7 @@ public class CameraMove : MonoBehaviour
         panelMain.SetActive(false);
         panelLevels.SetActive(false);
         panelTutorial.SetActive(false);
+        creditsDancer.SetActive(true);
         StartCoroutine(ActivateCreditsUI(1));
     }
     IEnumerator ActivateLevelsUI(int secs)
@@ -109,6 +89,16 @@ public class CameraMove : MonoBehaviour
         yield return new WaitForSeconds(secs);
         panelCredits.SetActive(true);
     }
+    IEnumerator WaitBeforeDeactivating(float secs)
+    {
+        Debug.Log("Entre");
+        yield return new WaitForSeconds(secs);
+        creditsDancer.SetActive(false);
+    }
 
+    public void DeactivateDancer()
+    {
+        StartCoroutine(WaitBeforeDeactivating(0.3f));
+    }
 
 }
