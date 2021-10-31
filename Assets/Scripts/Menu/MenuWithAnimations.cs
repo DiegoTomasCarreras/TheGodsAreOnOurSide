@@ -13,6 +13,8 @@ public class MenuWithAnimations : MonoBehaviour
     public Animator enemy2Anim;
     public GameObject enemy3;
     public Animator enemy3Anim;
+
+    public GameObject loadingScreen;
     void Start()
     {
         currentSelectedLevel = 1;
@@ -74,7 +76,7 @@ public class MenuWithAnimations : MonoBehaviour
     IEnumerator WaitBeforeLoadingScene(float secs, int scene)
     {
         yield return new WaitForSeconds(secs);
-        //InsertLOADINGSCREEN
+        loadingScreen.SetActive(true);
         SceneManager.LoadScene(scene);
     }
 }

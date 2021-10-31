@@ -9,26 +9,60 @@ public class Manager : MonoBehaviour
     public Text debugText;
     public List<Enemy> enemies = new List<Enemy>();
     public GameObject notEnoughMoneyImage;
-    public bool nemActivated = false;
     public float currentTimer;
     public float timer;
 
     public Text moneyText;
+
+    public bool gameStarted = false;
+    public Text startingInText;
+    public GameObject startingInBackground;
+    private float startingInTimer;
+    private bool CountDownStarted = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //startingInText.enabled = false;
+        startingInText.gameObject.SetActive(false);
+        startingInBackground.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         currentTimer -= Time.deltaTime;
-        if (nemActivated == true && currentTimer<=0) //este codigo de aca se supone que abre un cartel que dice no te alcanza la guita si tratas de comprar cuando no tenes, si no lo uso dsp eliminar
-        {
-            Destroy(notEnoughMoneyImage);
-        }
         moneyText.text = money.ToString();
+
+        //a partir de aca es countdown timer
+        if (startingInTimer<=0f&&CountDownStarted==true)
+        {
+            if(startingInText.enabled==false)
+            {
+                return;
+            }
+            else
+            {
+                startingInText.enabled = false;
+                startingInBackground.SetActive(false);
+            }
+            return;
+        }
+        if(gameStarted==true&&CountDownStarted==false)
+        {
+            StartCountDown();
+            CountDownStarted = true;
+            startingInTimer = 3.5f;
+        }
+            startingInTimer -= Time.deltaTime;
+        if (startingInTimer>=0.7f)
+        {
+            startingInText.text = "Starting in " + ((int)Mathf.RoundToInt(startingInTimer)).ToString();
+        }
+        else
+        {
+            startingInText.text = "Survive";
+        }
     }
     public void Pause() //para que las cosas no sigan updateando cambiar todos los update a fixed update
     {
@@ -38,10 +72,10 @@ public class Manager : MonoBehaviour
     {
 
     }
-    public void ActivateNotEnoughMoney()
+    private void StartCountDown()
     {
-        notEnoughMoneyImage.active = true;
-        nemActivated = true;
-        currentTimer = timer;
+        //startingInText.enabled = true;
+        startingInText.gameObject.SetActive(true);
+        startingInBackground.SetActive(true);
     }
 }
