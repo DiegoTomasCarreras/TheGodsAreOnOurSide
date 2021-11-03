@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 public class MenuWithAnimations : MonoBehaviour
 {
     public int currentSelectedLevel;
-    public GameObject enemySpawner;
+    //public GameObject enemySpawner;
     public GameObject enemy1;
+    public GameObject imgGreen1;
     public Animator enemy1Anim;
     public GameObject enemy2;
+    public GameObject imgGreen2;
     public Animator enemy2Anim;
     public GameObject enemy3;
     public Animator enemy3Anim;
+    public GameObject imgGreen3;
 
     public GameObject loadingScreen;
     void Start()
@@ -56,17 +59,25 @@ public class MenuWithAnimations : MonoBehaviour
         switch (lvl)
         {
             case 1:
-                //Instantiate(enemy1, enemySpawner.transform.position, enemySpawner.transform.rotation);
+                imgGreen1.SetActive(true);
+                imgGreen2.SetActive(false);
+                imgGreen3.SetActive(false);
                 enemy1.SetActive(true);
                 enemy2.SetActive(false);
                 enemy3.SetActive(false);
                 break;
             case 2:
+                imgGreen2.SetActive(true);
+                imgGreen1.SetActive(false);
+                imgGreen3.SetActive(false);
                 enemy2.SetActive(true);
                 enemy1.SetActive(false);
                 enemy3.SetActive(false);
                 break;
             case 3:
+                imgGreen3.SetActive(true);
+                imgGreen1.SetActive(false);
+                imgGreen2.SetActive(false);
                 enemy3.SetActive(true);
                 enemy1.SetActive(false);
                 enemy2.SetActive(false);

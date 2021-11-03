@@ -18,13 +18,14 @@ public class CameraMove : MonoBehaviour
     public GameObject panelTutorial;
 
     public GameObject creditsDancer;
-
+    MenuWithAnimations m;
 
 
     // Start is called before the first frame update
     void Start()
     {
         panelMain.SetActive(true);
+        m = FindObjectOfType<MenuWithAnimations>();
     }
 
     // Update is called once per frame
@@ -41,6 +42,9 @@ public class CameraMove : MonoBehaviour
         panelCredits.SetActive(false);
         panelMain.SetActive(false);
         panelTutorial.SetActive(false);
+        m.imgGreen1.SetActive(true);
+        m.imgGreen2.SetActive(false);
+        m.imgGreen3.SetActive(false);
         StartCoroutine(ActivateLevelsUI(1));
     }
     public void MoveTowardsPlay()
