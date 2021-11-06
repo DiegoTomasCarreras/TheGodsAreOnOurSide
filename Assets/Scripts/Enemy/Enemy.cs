@@ -108,6 +108,8 @@ public class Enemy : MonoBehaviour
     public void ReachedGoal()
     {
         Debug.Log("reached goal");
+        m.YouLose();
+        //HACER QUE PERDES
     }
     public void GetNextPathNode()
     {

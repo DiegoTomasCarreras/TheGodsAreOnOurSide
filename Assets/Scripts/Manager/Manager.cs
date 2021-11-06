@@ -19,6 +19,8 @@ public class Manager : MonoBehaviour
     public GameObject startingInBackground;
     private float startingInTimer;
     private bool CountDownStarted = false;
+
+    public GameObject youLoseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,5 +79,11 @@ public class Manager : MonoBehaviour
         //startingInText.enabled = true;
         startingInText.gameObject.SetActive(true);
         startingInBackground.SetActive(true);
+    }
+
+    public void YouLose()
+    {
+        Time.timeScale = 0;
+        youLoseScreen.SetActive(true);
     }
 }

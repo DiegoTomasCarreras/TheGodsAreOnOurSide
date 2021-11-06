@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void LoadLevel()
+    public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(1);
-    }
-    public void LoadStore()
-    {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(scene);
+        Time.timeScale = 1;
     }
     public void QuitGame()
     {
