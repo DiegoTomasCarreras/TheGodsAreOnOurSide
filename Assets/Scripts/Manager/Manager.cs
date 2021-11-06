@@ -21,6 +21,10 @@ public class Manager : MonoBehaviour
     private bool CountDownStarted = false;
 
     public GameObject youLoseScreen;
+    public GameObject youWinScreen;
+    public int currentEnemyKills;
+    public int enemyKillsObjective;
+    public int enemiesSpawned;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,11 @@ public class Manager : MonoBehaviour
     {
         currentTimer -= Time.deltaTime;
         moneyText.text = money.ToString();
+
+        if (currentEnemyKills >= enemyKillsObjective)
+        {
+            YouWin();
+        }
 
         //a partir de aca es countdown timer
         if (startingInTimer<=0f&&CountDownStarted==true)
@@ -85,5 +94,11 @@ public class Manager : MonoBehaviour
     {
         Time.timeScale = 0;
         youLoseScreen.SetActive(true);
+    }
+
+    public void YouWin()
+    {
+        Time.timeScale = 0;
+        youWinScreen.SetActive(true);
     }
 }

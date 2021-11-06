@@ -15131,6 +15131,10 @@ MonoBehaviour:
   startingInText: {fileID: 1082819289}
   startingInBackground: {fileID: 870130261}
   youLoseScreen: {fileID: 2055995887}
+  youWinScreen: {fileID: 469252889}
+  currentEnemyKills: 0
+  enemyKillsObjective: 2
+  enemiesSpawned: 0
 --- !u!4 &1976167965
 Transform:
   m_ObjectHideFlags: 0
@@ -15805,6 +15809,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1617543476243156057, guid: 433c7ef3793410f4598901c9456f9039,
         type: 3}
+    - target: {fileID: 403949300009315245, guid: 958c14aaf287a9b4693688c678042cb6,
+        type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 403949300009315246, guid: 958c14aaf287a9b4693688c678042cb6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15864,6 +15873,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Orc
+      objectReference: {fileID: 0}
+    - target: {fileID: 403949300009315247, guid: 958c14aaf287a9b4693688c678042cb6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958c14aaf287a9b4693688c678042cb6, type: 3}
@@ -16128,6 +16142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -28.825548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2652875512764818310, guid: 38f80f6e8d49e7647bb7d168b608b35b,
+        type: 3}
+      propertyPath: range
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2694611145394759945, guid: 38f80f6e8d49e7647bb7d168b608b35b,
         type: 3}

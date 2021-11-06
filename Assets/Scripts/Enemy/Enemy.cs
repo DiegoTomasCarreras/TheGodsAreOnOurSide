@@ -104,6 +104,7 @@ public class Enemy : MonoBehaviour
         source.PlayOneShot(deathSound);
         Object.Destroy(this.gameObject, 4f);
         m.money += price;
+        m.currentEnemyKills += 1;
     }
     public void ReachedGoal()
     {

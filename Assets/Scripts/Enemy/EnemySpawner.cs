@@ -13,19 +13,27 @@ public class EnemySpawner : MonoBehaviour
     public float timeDiscountFirstOrc;
     public float spawnTimerDiscounter;
     public float minSpawnTime;
+
+    private Manager m;
     // Start is called before the first frame update
     void Start()
     {
         time += timeDiscountFirstOrc;
+        m = FindObjectOfType<Manager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(m.enemiesSpawned>=m.enemyKillsObjective) //if no more enemies to spawn stop spawning
+        {
+            return;
+        }
         time += Time.deltaTime;
         if (time >= spawnTimer)
         {
             GameObject e = Instantiate(enemy, this.transform.position, this.transform.rotation);
+            m.enemiesSpawned += 1;
             time = 0;
             spawnTimer -= spawnTimerDiscounter;
             if (spawnTimer<minSpawnTime)
