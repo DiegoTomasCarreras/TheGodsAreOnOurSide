@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource source;
     public GameObject clickSoundPrefab;
     public GameObject cameraLocation;
+    public AudioClip orcSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class SoundManager : MonoBehaviour
     public void PlayClickSound2()
     {
         Instantiate(clickSoundPrefab, cameraLocation.transform.position, cameraLocation.transform.rotation);
+    }
+
+    public void PlayOrcSound()
+    {
+        source.PlayOneShot(orcSound);
     }
 }
