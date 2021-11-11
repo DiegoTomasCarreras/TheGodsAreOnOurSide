@@ -40,11 +40,11 @@ public class MenuWithAnimations : MonoBehaviour
                 break;
             case 2:
                 enemy2Anim.SetBool("isSelected", true);
-                StartCoroutine(WaitBeforeLoadingScene(2f, 1));
+                StartCoroutine(WaitBeforeLoadingScene(2f, 2));
                 break;
             case 3:
                 enemy3Anim.SetBool("isSelected", true);
-                StartCoroutine(WaitBeforeLoadingScene(2f, 1));
+                StartCoroutine(WaitBeforeLoadingScene(2f, 3));
                 break;
         }
 
