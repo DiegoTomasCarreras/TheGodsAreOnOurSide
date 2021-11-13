@@ -20,6 +20,9 @@ public class CameraMove : MonoBehaviour
     public GameObject creditsDancer;
     MenuWithAnimations m;
 
+    public GameObject tutPrefab1;
+    public GameObject tutPrefab2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,8 @@ public class CameraMove : MonoBehaviour
         panelCredits.SetActive(false);
         panelLevels.SetActive(false);
         panelMain.SetActive(false);
+        tutPrefab1.SetActive(true);
+        tutPrefab2.SetActive(true);
         StartCoroutine(ActivateTutorialUI(1));
     }
     public void MoveTowardsCredits()
@@ -104,6 +109,12 @@ public class CameraMove : MonoBehaviour
     public void DeactivateDancer()
     {
         StartCoroutine(WaitBeforeDeactivating(0.3f));
+    }
+
+    public void DeactivateTutorialPrefabs()
+    {
+        tutPrefab1.SetActive(false);
+        tutPrefab2.SetActive(false);
     }
 
 }

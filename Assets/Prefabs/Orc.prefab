@@ -231,7 +231,7 @@ MonoBehaviour:
   freezeParticles: {fileID: 6431044068370311862, guid: 6b6cb76dc3c99d34b8a9f3e114f2ebce,
     type: 3}
   deathSound: {fileID: 8300000, guid: ca763429f20f84048a91b4959106e412, type: 3}
-  freezeShot: {fileID: 8300000, guid: cdb9f83688b791a47af39b4c4544d11a, type: 3}
+  freezeShot: {fileID: 8300000, guid: 0cf6d7509c3ce524985fc8784ee7ddc5, type: 3}
   source: {fileID: 0}
   isDead: 0
   price: 10
