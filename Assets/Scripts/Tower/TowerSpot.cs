@@ -9,6 +9,7 @@ public class TowerSpot : MonoBehaviour
     public AudioClip spawnSound;
     public AudioSource source;
     public AudioClip errorSound;
+    public GameObject availableEffect;
     
     Manager m; //para debug
     //deberia haber una variable que diga tipo isOccupied que guarde el objeto torre y dsp si queres podes eliminarlo/upgradearlo y tambien evitas que spawneen otro encima
@@ -40,8 +41,9 @@ public class TowerSpot : MonoBehaviour
             m.money -= um.selectedUnit.GetComponent<ArcherWithAnim>().cost;
             Instantiate(um.selectedUnit, transform.position, transform.rotation);
             m.debugText.text = "Instancie unidad";
-
-            //Destroy(transform.parent.gameObject); esto destruiria el towerspot
+            availableEffect.SetActive(false);
+            //Destroy(transform.parent.gameObject);
+            Destroy(this.gameObject);
         }
     }
     private void Update()

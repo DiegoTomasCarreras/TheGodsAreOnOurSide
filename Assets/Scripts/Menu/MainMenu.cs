@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(scene);
         Time.timeScale = 1;
+        SceneManager.LoadScene(scene);
     }
     public void QuitGame()
     {

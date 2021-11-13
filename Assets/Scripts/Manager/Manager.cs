@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour
         //startingInText.enabled = false;
         startingInText.gameObject.SetActive(false);
         startingInBackground.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame

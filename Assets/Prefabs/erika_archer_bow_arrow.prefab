@@ -949,7 +949,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3622728545317641789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1437,13 +1437,10 @@ MonoBehaviour:
   cost: 10
   range: 30
   arrow: {fileID: 1575978984198703097, guid: 9f5fe5a8c74715248986be7c52d1e17a, type: 3}
-  reloadTime: 1.2
-  reloadTimeLeft: 0
   damage: 5
   radius: 0
-  recoilTime: 0
-  recoilTimeLeft: 0
   shooter: {fileID: 3622728545317641788}
+  isReloading: 0
 --- !u!1 &4753710454425828647
 GameObject:
   m_ObjectHideFlags: 0

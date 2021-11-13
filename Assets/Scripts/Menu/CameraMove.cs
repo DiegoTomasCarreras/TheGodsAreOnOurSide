@@ -26,6 +26,7 @@ public class CameraMove : MonoBehaviour
     {
         panelMain.SetActive(true);
         m = FindObjectOfType<MenuWithAnimations>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
