@@ -56,4 +56,8 @@ public class Ultimate : MonoBehaviour
             cooldownTimer.enabled = true;
         }
     }
+    public void FindUltimateSpawnPosition()
+    {
+        ultiSpawnPosition = GameObject.Find("UltiSpawner");
+    }
 }

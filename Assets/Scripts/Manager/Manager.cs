@@ -25,6 +25,9 @@ public class Manager : MonoBehaviour
     public int currentEnemyKills;
     public int enemyKillsObjective;
     public int enemiesSpawned;
+
+    public Ultimate u; 
+    public GameObject ultimateBlocker;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,7 @@ public class Manager : MonoBehaviour
         startingInText.gameObject.SetActive(false);
         startingInBackground.SetActive(false);
         Time.timeScale = 1;
+        u = FindObjectOfType<Ultimate>();
     }
 
     // Update is called once per frame
@@ -63,6 +67,8 @@ public class Manager : MonoBehaviour
         if(gameStarted==true&&CountDownStarted==false)
         {
             StartCountDown();
+            u.FindUltimateSpawnPosition();
+            ultimateBlocker.SetActive(false);
             CountDownStarted = true;
             startingInTimer = 3.5f;
         }
