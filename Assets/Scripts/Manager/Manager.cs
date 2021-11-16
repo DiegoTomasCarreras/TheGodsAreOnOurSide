@@ -28,10 +28,13 @@ public class Manager : MonoBehaviour
 
     public Ultimate u; 
     public GameObject ultimateBlocker;
+
+    AudioSource source;
+    public AudioClip backgroundMusic;
     // Start is called before the first frame update
     void Start()
     {
-
+        source = this.GetComponent<AudioSource>();
         //startingInText.enabled = false;
         startingInText.gameObject.SetActive(false);
         startingInBackground.SetActive(false);
@@ -71,6 +74,7 @@ public class Manager : MonoBehaviour
             ultimateBlocker.SetActive(false);
             CountDownStarted = true;
             startingInTimer = 3.5f;
+            source.PlayOneShot(backgroundMusic);
         }
             startingInTimer -= Time.deltaTime;
         if (startingInTimer>=0.7f)
@@ -82,13 +86,13 @@ public class Manager : MonoBehaviour
             startingInText.text = "Survive";
         }
     }
-    public void Pause() //para que las cosas no sigan updateando cambiar todos los update a fixed update
+    public void PauseSound() //para que las cosas no sigan updateando cambiar todos los update a fixed update
     {
-
+        source.Pause();
     }
-    public void UnPause()
+    public void UnPauseSound()
     {
-
+        source.UnPause();
     }
     private void StartCountDown()
     {

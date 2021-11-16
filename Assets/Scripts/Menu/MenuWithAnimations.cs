@@ -18,11 +18,16 @@ public class MenuWithAnimations : MonoBehaviour
     public GameObject imgGreen3;
 
     public GameObject loadingScreen;
+
+    public AudioSource source;
+    public AudioClip backgroundMusic;
     void Start()
     {
         currentSelectedLevel = 1;
         enemy1.SetActive(true);
         //poner el boton 1 como seleccionado
+        //source.volume = 0.3f;
+        source.PlayOneShot(backgroundMusic);
     }
 
     // Update is called once per frame

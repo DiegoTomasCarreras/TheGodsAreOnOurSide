@@ -969,7 +969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.84725004, y: 0.009000001}
   m_AnchorMax: {x: 0.9760001, y: 0.028648648}
-  m_AnchoredPosition: {x: 2.2687988, y: -1.7000122}
+  m_AnchoredPosition: {x: 2.2687988, y: -1.6999512}
   m_SizeDelta: {x: 3.2999878, y: 1.3000488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &263169887
@@ -5811,6 +5811,7 @@ MonoBehaviour:
   enemiesSpawned: 0
   u: {fileID: 0}
   ultimateBlocker: {fileID: 1910542359}
+  backgroundMusic: {fileID: 8300000, guid: ab0a2bd75dd323041a5f10954bfee083, type: 3}
 --- !u!4 &1976167965
 Transform:
   m_ObjectHideFlags: 0
