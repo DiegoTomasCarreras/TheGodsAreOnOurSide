@@ -9,6 +9,9 @@ public class Arrow : MonoBehaviour
     public float radius=0;
 
     public Transform target;
+
+    //a partir de aca explosivo test
+    public GameObject explosionParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +57,8 @@ public class Arrow : MonoBehaviour
         }
         else
         {
+            target.GetComponent<Enemy>().InstantiateExplosionEffect();
+            //Instantiate(explosionParticle, this.transform.position, this.transform.rotation); Instancia la explosion en cualquier lado
             Collider[] cols = Physics.OverlapSphere(transform.position, radius);
 
             foreach (Collider c in cols)

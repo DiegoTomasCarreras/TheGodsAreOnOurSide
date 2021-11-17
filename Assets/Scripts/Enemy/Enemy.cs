@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     public float price;
 
+    public GameObject explosionEffect;
     void Start()
     {
         pathGO = GameObject.Find("Path1");
@@ -149,5 +150,9 @@ public class Enemy : MonoBehaviour
     {
         speed=speed*0.5f;
         timeSlowedDown = 0;
+    }
+    public void InstantiateExplosionEffect()
+    {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
     }
 }

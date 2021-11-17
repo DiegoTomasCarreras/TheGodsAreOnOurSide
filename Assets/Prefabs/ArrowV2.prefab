@@ -49,6 +49,8 @@ MonoBehaviour:
   damage: 5
   radius: 0
   target: {fileID: 0}
+  explosionParticle: {fileID: 6431044068370311862, guid: d0a2abd81c2cfc24d9ae1a2cc1e320da,
+    type: 3}
 --- !u!54 &3231955169912148803
 Rigidbody:
   m_ObjectHideFlags: 0

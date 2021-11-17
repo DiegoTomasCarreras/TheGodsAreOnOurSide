@@ -6018,6 +6018,7 @@ MonoBehaviour:
   clickSoundPrefab: {fileID: 0}
   cameraLocation: {fileID: 0}
   orcSound: {fileID: 0}
+  menuMusic: {fileID: 0}
 --- !u!1 &1985308836
 GameObject:
   m_ObjectHideFlags: 0
