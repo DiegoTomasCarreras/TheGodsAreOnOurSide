@@ -34,10 +34,12 @@ public class Enemy : MonoBehaviour
 
     public float price;
 
+    public string path;
+
     public GameObject explosionEffect;
     void Start()
     {
-        pathGO = GameObject.Find("Path1");
+        pathGO = GameObject.Find(path);
         anim = GetComponent<Animator>();
         //establecerle el path en el spawner cuando se spawnea
         m = FindObjectOfType<Manager>();

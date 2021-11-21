@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     public float spawnTimerDiscounter;
     public float minSpawnTime;
 
+    public string path;
+
     private Manager m;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
         if (time >= spawnTimer)
         {
             GameObject e = Instantiate(enemy, this.transform.position, this.transform.rotation);
+            enemy.GetComponent<Enemy>().path = path;
             m.enemiesSpawned += 1;
             time = 0;
             spawnTimer -= spawnTimerDiscounter;
