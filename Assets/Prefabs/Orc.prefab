@@ -235,6 +235,7 @@ MonoBehaviour:
   source: {fileID: 0}
   isDead: 0
   price: 10
+  path: 
   explosionEffect: {fileID: 6431044068370311862, guid: d0a2abd81c2cfc24d9ae1a2cc1e320da,
     type: 3}
 --- !u!136 &-6612711970625703164

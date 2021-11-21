@@ -308,6 +308,7 @@ MonoBehaviour:
   timeDiscountFirstOrc: 0
   spawnTimerDiscounter: 0
   minSpawnTime: 0
+  path: 
 --- !u!1 &52857194
 GameObject:
   m_ObjectHideFlags: 0

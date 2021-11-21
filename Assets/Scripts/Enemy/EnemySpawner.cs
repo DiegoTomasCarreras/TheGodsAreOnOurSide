@@ -34,8 +34,8 @@ public class EnemySpawner : MonoBehaviour
         time += Time.deltaTime;
         if (time >= spawnTimer)
         {
-            GameObject e = Instantiate(enemy, this.transform.position, this.transform.rotation);
             enemy.GetComponent<Enemy>().path = path;
+            Instantiate(enemy, this.transform.position, this.transform.rotation);
             m.enemiesSpawned += 1;
             time = 0;
             spawnTimer -= spawnTimerDiscounter;
