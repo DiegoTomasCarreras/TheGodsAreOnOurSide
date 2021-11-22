@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7eb48b5f026b34bba7020eaf5ac549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 6259707528796109411, guid: 3d9697103af7d8d41aafa41c98bc6a31,
+  objectToSpawn: {fileID: 5129724288860567342, guid: 3d9697103af7d8d41aafa41c98bc6a31,
     type: 3}
   pcm: {fileID: 0}
   pcmPointerToDisable: {fileID: 692952651}
@@ -6250,7 +6250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 845bd2bcdb6a4fd4e9d8773f0c82f34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 250
   debugText: {fileID: 1035034827}
   enemies: []
   notEnoughMoneyImage: {fileID: 0}
@@ -6263,7 +6263,7 @@ MonoBehaviour:
   youLoseScreen: {fileID: 2055995887}
   youWinScreen: {fileID: 469252889}
   currentEnemyKills: 0
-  enemyKillsObjective: 10
+  enemyKillsObjective: 12
   enemiesSpawned: 0
   u: {fileID: 0}
   ultimateBlocker: {fileID: 1910542359}
@@ -6311,7 +6311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arCamera: {fileID: 1985308837}
-  damage: 10
+  damage: 15
   cooldown: 1
   currentCooldown: 0
 --- !u!114 &1976167968

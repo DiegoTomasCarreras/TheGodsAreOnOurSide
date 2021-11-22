@@ -1434,10 +1434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d49d9dda39e80845b6161f3bafc3b59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 100
   range: 30
   arrow: {fileID: 1575978984198703097, guid: 9f5fe5a8c74715248986be7c52d1e17a, type: 3}
-  damage: 5
+  damage: 10
   radius: 0
   shooter: {fileID: 3622728545317641788}
   isReloading: 0

@@ -17,16 +17,25 @@ public class EnemySpawner : MonoBehaviour
     public string path;
 
     private Manager m;
+
+    public float spawnDelay;
+    public float currentSpawnDelay;
     // Start is called before the first frame update
     void Start()
     {
         time += timeDiscountFirstOrc;
         m = FindObjectOfType<Manager>();
+        currentSpawnDelay = spawnDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentSpawnDelay -= Time.deltaTime;
+        if(currentSpawnDelay>0)
+        {
+            return;
+        }
         if(m.enemiesSpawned>=m.enemyKillsObjective) //if no more enemies to spawn stop spawning
         {
             return;

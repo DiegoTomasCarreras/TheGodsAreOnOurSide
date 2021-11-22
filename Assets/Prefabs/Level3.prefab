@@ -75,14 +75,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f06b51938ff4c64dac9ec52cf3e500d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 403949300009315247, guid: 958c14aaf287a9b4693688c678042cb6, type: 3}
+  enemy: {fileID: 6107988330167986992, guid: 4c9a36bdb3bad9a458372e926cb6995a, type: 3}
   spawner: {fileID: 0}
   time: 0
-  spawnTimer: 4
+  spawnTimer: 5
   timeDiscountFirstOrc: 0
-  spawnTimerDiscounter: 0.1
+  spawnTimerDiscounter: 0.17
   minSpawnTime: 1
   path: Path3
+  spawnDelay: 0
+  currentSpawnDelay: 0
 --- !u!1 &1606299592781893087
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,9 +319,11 @@ MonoBehaviour:
   time: 0
   spawnTimer: 4
   timeDiscountFirstOrc: 0
-  spawnTimerDiscounter: 0.1
+  spawnTimerDiscounter: 0.15
   minSpawnTime: 1
   path: Path2
+  spawnDelay: 0
+  currentSpawnDelay: 0
 --- !u!1 &5228515386549671524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1261,7 @@ PrefabInstance:
     - target: {fileID: 1292115117892169650, guid: 50582e4451138dc4288c6c51d712a22f,
         type: 3}
       propertyPath: spawnTimerDiscounter
-      value: 0.1
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 1292115117892169650, guid: 50582e4451138dc4288c6c51d712a22f,
         type: 3}
@@ -1273,6 +1277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: path
       value: Path1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1292115117892169650, guid: 50582e4451138dc4288c6c51d712a22f,
+        type: 3}
+      propertyPath: spawnDelay
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1292115118593457279, guid: 50582e4451138dc4288c6c51d712a22f,
         type: 3}

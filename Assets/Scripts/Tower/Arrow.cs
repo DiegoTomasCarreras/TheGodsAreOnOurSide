@@ -57,6 +57,7 @@ public class Arrow : MonoBehaviour
         }
         else
         {
+            target.GetComponent<Enemy>().TakeDamage(damage); //esta linea se agrego porque por alguna razon no dañaba al orco "objetivo"
             target.GetComponent<Enemy>().InstantiateExplosionEffect();
             //Instantiate(explosionParticle, this.transform.position, this.transform.rotation); Instancia la explosion en cualquier lado
             Collider[] cols = Physics.OverlapSphere(transform.position, radius);
