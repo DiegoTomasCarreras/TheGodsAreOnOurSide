@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject loadingScreen;
     public void LoadScene(int scene)
     {
+       loadingScreen.SetActive(true);
         Time.timeScale = 1;
         SceneManager.LoadScene(scene);
     }
