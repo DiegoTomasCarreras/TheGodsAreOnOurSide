@@ -31,6 +31,11 @@ public class Manager : MonoBehaviour
 
     AudioSource source;
     public AudioClip backgroundMusic;
+    public  AudioSource winAudio;
+    public AudioSource loseAudio;
+
+    int counter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +53,9 @@ public class Manager : MonoBehaviour
         currentTimer -= Time.deltaTime;
         moneyText.text = money.ToString();
 
-        if (currentEnemyKills >= enemyKillsObjective)
+        if (currentEnemyKills >= enemyKillsObjective&& counter == 0)
         {
+            counter++;
             YouWin();
         }
 
@@ -103,13 +109,28 @@ public class Manager : MonoBehaviour
 
     public void YouLose()
     {
+        source.Stop();
+        //loseAudio.Play();
         Time.timeScale = 0;
         youLoseScreen.SetActive(true);
     }
 
     public void YouWin()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;   ESTE 
+        //youWinScreen.SetActive(true); Y ESTE SON LOS OG
+        //desactivar musica comun
+        //
+        source.Stop();
+        winAudio.Play();
         youWinScreen.SetActive(true);
+        StartCoroutine(WaitBeforePausing(3f));
+
+    }
+
+    IEnumerator WaitBeforePausing(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        Time.timeScale = 0;
     }
 }
